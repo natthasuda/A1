@@ -7,32 +7,37 @@ let playerRollText = document.getElementById("playerRollText");
 let aiRollText = document.getElementById("aiRollText");
 let resultText = document.getElementById("resultText");
 
+
 //Data
 let playerRoll = 0;
 let aiRoll = 0;
 
-//Score
-let playerScore = 0;
-let aiScore = 0;
 
 //Process
 button0.addEventListener("click", function () {
-  playerRoll = getRandomNumberOneToSix();
-  showPlayerRollResult();
+ getRandomNumberPlayer();
+ getRandomNumberAi();
+ showPlayerRollResult();
+ showAiRollResult();
 
-});
+})
 
 //Controller
-function getRandomNumberOneToSix() {
-  playerRoll = Math.floor(Math.random() * 6) + 1;
-  console.log(playerRoll);
+function getRandomNumberPlayer() {
+ playerRoll = Math.floor(Math.random() * 6) + 1
+
+}
+
+function getRandomNumberAi() {
+  aiRoll = Math.floor(Math.random() * 6) + 1
+
 }
 
 //Views
 function showPlayerRollResult(){
-playerRollText.innerHTML = playerRoll;
+playerRollText.innerHTML = "Player: " + playerRoll;
 }
 
 function showAiRollResult(){
-aiRollText.innerHTML = aiRoll;
+aiRollText.innerHTML = "AI: " + aiRoll;
 }
