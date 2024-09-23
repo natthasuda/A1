@@ -11,8 +11,12 @@ let resultText = document.getElementById("resultText");
 //Data
 let playerRoll = 0;
 let aiRoll = 0;
-let resultRoll = " ";
+let playerWins = "Player wins ";
+let aiWins = "Ai wins";
+let itsaDraw =  "It's a draw";
+let resultRoll = playerWins + aiWins + itsaDraw;
 
+document.getElementById("resultText").innerHTML = resultRoll;
 
 //Process
 button0.addEventListener("click", function () {
@@ -48,6 +52,8 @@ function result(){
 }
 
 result = resultRoll;
+
+
 
 console.log("Player Roll: " + playerRoll);
 console.log("AI Roll: " + aiRoll);
