@@ -6,17 +6,17 @@ let button0 = document.getElementById("button0");
 let playerRollText = document.getElementById("playerRollText");
 let aiRollText = document.getElementById("aiRollText");
 let resultText = document.getElementById("resultText");
+let playerScoreText = document.getElementById("playerScoreText");
+let aiScoreText = document.getElementById("aiScoreText");
 
 
 //Data
 let playerRoll = 0;
 let aiRoll = 0;
-let playerWins = "Player wins ";
-let aiWins = "Ai wins";
-let itsaDraw =  "It's a draw";
-let resultRoll = playerWins + aiWins + itsaDraw;
+let playerScore = 0;
+let aiScore = 0;
 
-document.getElementById("resultText").innerHTML = resultRoll;
+
 
 //Process
 button0.addEventListener("click", function () {
@@ -24,7 +24,8 @@ button0.addEventListener("click", function () {
  getRandomNumberAi();
  showPlayerRollResult();
  showAiRollResult();
- showResultText();
+ updateScore();
+ result();
 
 })
 
@@ -41,23 +42,17 @@ function getRandomNumberAi() {
 
 function result(){
   if (playerRoll > aiRoll){
-    return "Player Wins";
+    resultText.innerText = "Player won!";
   }
   else if (aiRoll > playerRoll){
-    return "AI Wins";
+    resultText.innerText = " Computer won!";
+
   }
   else {
-   return "It's a draw";
+    resultText.innerText = " It's a draw!";
+
   }
 }
-
-result = resultRoll;
-
-
-
-console.log("Player Roll: " + playerRoll);
-console.log("AI Roll: " + aiRoll);
-console.log("Result: " + resultRoll);
 
 //Views
 function showPlayerRollResult(){
@@ -68,6 +63,7 @@ function showAiRollResult(){
 aiRollText.innerHTML = "AI: " + aiRoll;
 }
 
-function showResultText(){
-  resultText.innerHTML = "Result: " + resultRoll;
+function updateScore(){
+  playerScoreText.innerHTML = playerScore;
+  aiScoreText.innerHTML = aiScore;
 }
