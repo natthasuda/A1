@@ -40,30 +40,31 @@ function getRandomNumberAi() {
 
 }
 
-function result(){
-  if (playerRoll > aiRoll){
-    resultText.innerText = "Player won!";
-  }
-  else if (aiRoll > playerRoll){
-    resultText.innerText = " Computer won!";
+function result() {
+  if (playerRoll > aiRoll) {
+    resultText.innerHTML = "The result is:  Player won!";
+  } else if (aiRoll > playerRoll) {
+    resultText.innerHTML = "The result is: Computer won!";
+
+  } else {
+    resultText.innerHTML = "The result is: It's a draw!";
 
   }
-  else {
-    resultText.innerText = " It's a draw!";
-
-  }
+  document.querySelector(updateScore).innerText = playerScoreText;
+  document.querySelector(updateScore).innerText = aiScoreText;
 }
 
 //Views
-function showPlayerRollResult(){
-playerRollText.innerHTML = "Player: " + playerRoll;
-}
+  function showPlayerRollResult() {
+    playerRollText.innerHTML = "Player: " + playerRoll;
+  }
 
-function showAiRollResult(){
-aiRollText.innerHTML = "AI: " + aiRoll;
-}
+  function showAiRollResult() {
+    aiRollText.innerHTML = "AI: " + aiRoll;
+  }
 
-function updateScore(){
-  playerScoreText.innerHTML = playerScore;
-  aiScoreText.innerHTML = aiScore;
-}
+  function updateScore() {
+    playerScoreText.innerHTML = playerScore;
+    aiScoreText.innerHTML = aiScore;
+  }
+
